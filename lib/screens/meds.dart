@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shop_cart/screens/Explore/bakery.dart';
+import 'package:shop_cart/screens/Explore/meds2.dart';
+
 import 'package:shop_cart/screens/home.dart';
 import 'package:shop_cart/utility/categories_tile.dart';
 import 'package:shop_cart/utility/top_product_tile.dart';
 
-import 'Explore/bakery.dart';
-
-class GroceryPage extends StatefulWidget {
+class MedsPage extends StatefulWidget {
   @override
-  _GroceryPageState createState() => _GroceryPageState();
+  _MedsPageState createState() => _MedsPageState();
 }
 
-class _GroceryPageState extends State<GroceryPage> {
+class _MedsPageState extends State<MedsPage> {
   int selectedOptionIndex = 0;
 
   @override
@@ -38,7 +37,7 @@ class _GroceryPageState extends State<GroceryPage> {
           color: Colors.white,
           child: Column(
             children: <Widget>[
-              Center(child: Image.asset('assets/images/banner.png')),
+              Center(child: Image.asset('assets/images/medsbanner.jpeg')),
               _buildCategories(),
               _buildTopProducts(),
             ],
@@ -81,7 +80,7 @@ class _GroceryPageState extends State<GroceryPage> {
                 _ExploreAllButton(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Bakery()));
+                        MaterialPageRoute(builder: (context) => Meds2()));
                   },
                 ),
               ],
@@ -101,24 +100,24 @@ class _GroceryPageState extends State<GroceryPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         CategoriesTile(
-          assetPath: 'assets/images/bread.png',
+          assetPath: 'assets/images/medsone.png',
           color: Color(0xffFCE8A8),
-          title: 'Bakery',
+          title: 'Painkillers',
         ),
         CategoriesTile(
-          assetPath: 'assets/images/apple.png',
+          assetPath: 'assets/images/syrup.png',
           color: Color(0xffDFECF8),
-          title: 'Fruits',
+          title: 'Syrups',
         ),
         CategoriesTile(
-          assetPath: 'assets/images/vegetable.png',
+          assetPath: 'assets/images/mask.png',
           color: Color(0xffE2F3C2),
-          title: 'Vegetables',
+          title: 'Masks',
         ),
         CategoriesTile(
-          assetPath: 'assets/images/milk.png',
+          assetPath: 'assets/images/injection.png',
           color: Color(0xffFFDBC5),
-          title: 'Drinks',
+          title: 'Injections',
         ),
       ],
     );
@@ -159,29 +158,29 @@ class _GroceryPageState extends State<GroceryPage> {
   Widget _buildTopProductsList() {
     List topProductList = [
       TopProductTile(
-        assetPath: 'assets/images/kiwi.png',
+        assetPath: 'assets/images/mask.png',
         color: Color(0xffDFECF8),
-        price: '\Rs 225',
-        title: 'Kiwi Fruit',
+        price: '\Rs 50',
+        title: 'Surgical Mask',
       ),
       TopProductTile(
-        color: Color(0xffF4DEF8),
-        assetPath: 'assets/images/summer.png',
-        title: 'Watermelon',
+        color: Color(0xffFFFFFF),
+        assetPath: 'assets/images/torex.jpeg',
+        title: 'Torex Syrup',
         price: '\Rs 150',
       ),
       TopProductTile(
         color: Color(0xffFFF2C5),
-        assetPath: 'assets/images/strawberry.png',
-        title: 'Strawberry',
+        assetPath: 'assets/images/medp.png',
+        title: 'Combiflam Tablet',
         price: 'Rs 350',
       ),
-      TopProductTile(
-        color: Color(0xffebbcbf),
-        assetPath: 'assets/images/milk.png',
-        title: 'Milk',
-        price: 'Rs 100',
-      ),
+      // TopProductTile(
+      //   color: Color(0xffebbcbf),
+      //   assetPath: 'assets/images/milk.png',
+      //   title: 'Milk',
+      //   price: 'Rs 100',
+      // ),
     ];
 
     return Column(

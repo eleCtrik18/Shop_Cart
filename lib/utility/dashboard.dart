@@ -27,7 +27,6 @@ class Dashboard extends StatelessWidget {
     title: "Furniture",
     subtitle: "Tables, Sofas",
     event: "",
-
     //img: " assets/dashboard/furniture.png",
   );
   Items item5 = new Items(
@@ -46,7 +45,7 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Items> myList = [item1, item2, item3, item4, item5, item6];
-    var color = 0xff006400;
+    var color = 0xffda90e8;
     return Flexible(
       child: GridView.count(
           childAspectRatio: 1.0,
@@ -97,16 +96,6 @@ class Dashboard extends StatelessWidget {
                   SizedBox(
                     height: 4,
                   ),
-                  TextButton(
-                      style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(Colors.redAccent),
-                      ),
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Mobile()));
-                      },
-                      child: Text('Buy Now!')),
                 ],
               ),
             );
@@ -120,6 +109,6 @@ class Items {
   String subtitle;
   String event;
   String img;
-  String button;
+
   Items({this.title, this.subtitle, this.event, this.img});
 }

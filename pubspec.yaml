@@ -25,10 +25,17 @@ dependencies:
     sdk: flutter
   google_fonts: ^2.0.0
   http: 
-  firebase_core: ^1.0.2
-  firebase_auth: ^1.0.1
-  cloud_firestore: ^1.0.3
-  google_maps_flutter: ^2.0.2  
+  font_awesome_flutter: ^8.8.1 
+  material_design_icons_flutter: ^4.0.5955
+  toast: ^0.1.5
+  barcode_scan: ^2.0.1
+  qr_flutter: ^3.2.0
+  path_provider: ^2.0.0
+  dio: ^4.0.0
+  flutter_polyline_points: ^1.0.0
+  google_maps_flutter: ^2.0.3
+  flutter_spinkit: ^5.0.0
+  url_launcher: ^5.7.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -54,6 +61,32 @@ flutter:
   assets:
     - assets/logo/person.png
     - assets/logo/notification.png
+    - assets/images/vegetable.png
+    - assets/images/summer.png
+    - assets/images/strawberry.png
+    - assets/images/milk.png
+    - assets/images/kiwi.png
+    - assets/images/bread.png
+    - assets/images/banner.png
+    - assets/images/apple.png
+    - assets/images/buy.jpeg
+    - assets/images/grocery.png
+    - assets/images/fashion.png
+    - assets/images/furniture.png
+    - assets/images/appliance.png
+    - assets/images/mask.png
+    - assets/images/medsbanner.jpeg
+    - assets/images/torex.jpeg
+    - assets/images/painkiller.png
+    - assets/images/medsone.png
+    - assets/images/grocery.png
+    - assets/images/medp.png
+    - assets/images/syrup.png
+    - assets/images/injection.png
+    - assets/logo/shopcart.png
+    - assets/images/flash.jpeg
+
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
