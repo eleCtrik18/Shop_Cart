@@ -35,7 +35,7 @@ dependencies:
   flutter_polyline_points: ^1.0.0
   google_maps_flutter: ^2.0.3
   flutter_spinkit: ^5.0.0
-  url_launcher: ^5.7.2
+  url_launcher: ^5.7.10
 
 
   # The following adds the Cupertino Icons font to your application.

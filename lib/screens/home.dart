@@ -6,10 +6,12 @@ import 'package:shop_cart/screens/account.dart';
 
 import 'package:shop_cart/screens/camera/scan.dart';
 import 'package:shop_cart/screens/dev.dart';
+import 'package:shop_cart/screens/find.dart';
 
 import 'package:shop_cart/screens/grocery.dart';
 import 'package:shop_cart/screens/meds.dart';
 import 'package:shop_cart/screens/orders.dart';
+import 'package:shop_cart/screens/test.dart';
 import 'package:shop_cart/utility/dashboard.dart';
 
 class HomePage extends StatefulWidget {
@@ -342,7 +344,7 @@ class _HomePageState extends State<HomePage> {
               ),
               child: new Column(children: <Widget>[
                 new ListTile(
-                  title: new Text('Devloper'),
+                  title: new Text('Dev'),
                   trailing: new Icon(Icons.person),
                   onTap: () {
                     Navigator.push(context,
@@ -352,7 +354,7 @@ class _HomePageState extends State<HomePage> {
                 new Divider(),
                 new ListTile(
                   title: new Text('My Orders'),
-                  trailing: new Icon(Icons.account_box),
+                  trailing: new Icon(Icons.shopping_bag_sharp),
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => OrdersPage()));
@@ -361,7 +363,7 @@ class _HomePageState extends State<HomePage> {
                 new Divider(),
                 new ListTile(
                   title: new Text('My Account'),
-                  trailing: new Icon(Icons.person),
+                  trailing: new Icon(Icons.account_balance),
                   onTap: () {
                     Navigator.push(
                         context,
@@ -373,6 +375,15 @@ class _HomePageState extends State<HomePage> {
                 new ListTile(
                   title: new Text('Find Us'),
                   trailing: new Icon(Icons.location_city),
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Find()));
+                  },
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text('Chat with Us'),
+                  trailing: new Icon(Icons.message),
                   onTap: () {},
                 ),
               ]),

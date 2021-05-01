@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shop_cart/screens/grocery.dart';
+import 'package:shop_cart/search/search.dart';
 import 'package:toast/toast.dart';
 
 class Bakery extends StatefulWidget {
@@ -43,7 +44,14 @@ class _BakeryState extends State<Bakery> {
   List<Widget> _buildActions() => <Widget>[
         IconButton(
           icon: Icon(Icons.search),
-          onPressed: () {},
+          onPressed: () async {
+            final result = await showSearch<String>(
+              context: context,
+              delegate: NameSearch(names),
+            );
+
+            print(result);
+          },
           color: Colors.grey,
           tooltip: 'Search',
         ),
@@ -126,3 +134,20 @@ class _BakeryState extends State<Bakery> {
     );
   }
 }
+
+const names = [
+  "Kiwi",
+  "Beer",
+  "Bread",
+  "Milk",
+  "Watermelon",
+  "Apple",
+  "Strawberry",
+  "Butter",
+  "Rice",
+  "Sugar",
+  "Ashirwad Atta",
+  "Cheese",
+  "Eggs",
+  "Soya Chunks",
+];

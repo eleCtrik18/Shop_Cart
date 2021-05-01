@@ -1,51 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Dev extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
   @override
-  _DevState createState() => _DevState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _DevState extends State<Dev> {
+class _MyHomePageState extends State<MyHomePage> {
+  final String lat = "25.3622";
+  final String lng = "86.0835";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 1,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.green,
-          ),
+        appBar: AppBar(
+          title: Text('Url Launcher Demo'),
         ),
-      ),
-      body: SafeArea(
-        child: Column(
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            CircleAvatar(
-              radius: 40.0,
-              backgroundImage: AssetImage('assets/images/flash.jpeg'),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text('Chetan Singh'.toUpperCase()),
-            SizedBox(
-              height: 15.0,
-              width: 200.0,
-              child: Divider(
-                color: Colors.pink,
-              ),
-            ),
-            Text('Andriod Developer'.toUpperCase()),
-            SizedBox(
-              height: 10.0,
-            ),
+          children: [
             Card(
               color: Colors.blue,
               shape: RoundedRectangleBorder(
@@ -58,16 +31,16 @@ class _DevState extends State<Dev> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.code,
+                      Icons.open_in_browser,
                       color: Colors.white,
                     ),
                     SizedBox(
                       width: 5,
                     ),
                     InkWell(
-                      onTap: _launchGithub,
+                      onTap: _launchURL,
                       child: Text(
-                        'GitHub: eleCtrik18',
+                        'Open Web url',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -96,7 +69,36 @@ class _DevState extends State<Dev> {
                     InkWell(
                       onTap: _launchEmail,
                       child: Text(
-                        'flutterproject18@gmail.com',
+                        'Open email',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Card(
+              color: Colors.blue,
+              shape: RoundedRectangleBorder(
+                side: new BorderSide(color: Colors.blue, width: 2.0),
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(13.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.navigation_outlined,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    InkWell(
+                      onTap: _launchMap,
+                      child: Text(
+                        'Open map',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -105,18 +107,30 @@ class _DevState extends State<Dev> {
               ),
             ),
           ],
-        ),
-      ),
-    );
+        ));
+  }
+
+  _launchMap() async {
+    final String googleMapsUrl = "comgooglemaps://?center=$lat,$lng";
+    final String appleMapsUrl = "https://maps.apple.com/?q=$lat,$lng";
+
+    if (await canLaunch(googleMapsUrl)) {
+      await launch(googleMapsUrl);
+    }
+    if (await canLaunch(appleMapsUrl)) {
+      await launch(appleMapsUrl, forceSafariVC: false);
+    } else {
+      throw "Couldn't launch URL";
+    }
   }
 
   _launchEmail() async {
     launch(
-        "mailto:flutterproject18@gmail.com?subject=Regarding App&body=Hello...%20plugin");
+        "mailto:rakhi@aeologic.com?subject=TestEmail&body=How are you%20plugin");
   }
 
-  _launchGithub() async {
-    const url = 'https://github.com/eleCtrik18';
+  _launchURL() async {
+    const url = 'https://flutterdevs.com/';
     if (await canLaunch(url)) {
       await launch(url);
     } else {

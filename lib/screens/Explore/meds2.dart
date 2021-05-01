@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shop_cart/screens/meds.dart';
+import 'package:shop_cart/search/search_meds.dart';
 import 'package:toast/toast.dart';
 
 class Meds2 extends StatefulWidget {
@@ -43,7 +44,14 @@ class _Meds2State extends State<Meds2> {
   List<Widget> _buildActions() => <Widget>[
         IconButton(
           icon: Icon(Icons.search),
-          onPressed: () {},
+          onPressed: () async {
+            final result = await showSearch<String>(
+              context: context,
+              delegate: NameSearch(names),
+            );
+
+            print(result);
+          },
           color: Colors.grey,
           tooltip: 'Search',
         ),
@@ -126,3 +134,15 @@ class _Meds2State extends State<Meds2> {
     );
   }
 }
+
+const names = [
+  "N 95 Mask",
+  "Oximeter",
+  "Paracetamol",
+  "Torex",
+  "Painkiller",
+  "Syrup",
+  "Combiflam",
+  "Ketsol",
+  "Dr. Ortho",
+];
