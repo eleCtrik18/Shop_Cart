@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:shop_cart/screens/Explore/bakery.dart';
+import 'package:shop_cart/screens/cart.dart';
 import 'package:shop_cart/screens/home.dart';
 import 'package:shop_cart/utility/categories_tile.dart';
 import 'package:shop_cart/utility/top_product_tile.dart';
@@ -55,7 +56,10 @@ class _GroceryPageState extends State<GroceryPage> {
             FontAwesomeIcons.shoppingBasket,
             size: 20,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Cart()));
+          },
           color: Colors.grey,
           tooltip: 'Cart',
         )
@@ -73,10 +77,6 @@ class _GroceryPageState extends State<GroceryPage> {
               children: <Widget>[
                 Text(
                   'Categories',
-                  style: GoogleFonts.varelaRound(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
                 ),
                 _ExploreAllButton(
                   onTap: () {
@@ -136,10 +136,6 @@ class _GroceryPageState extends State<GroceryPage> {
               children: <Widget>[
                 Text(
                   'Top Products',
-                  style: GoogleFonts.varelaRound(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
                 ),
                 //_ExploreAllButton(
                 //onTap: () {},
@@ -251,8 +247,6 @@ class _GroceryPageState extends State<GroceryPage> {
                         ),
                         Text(
                           bottomNavigationBarOptions[index],
-                          style: GoogleFonts.varelaRound(
-                              fontSize: 0, fontWeight: FontWeight.w500),
                         )
                       ],
                     ),
@@ -303,10 +297,6 @@ class _ExploreAllButton extends StatelessWidget {
         ),
         child: Text(
           'Explore All',
-          style: GoogleFonts.varelaRound(
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[700]),
         ),
       ),
     );

@@ -2,17 +2,20 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shop_cart/barcode.dart';
 import 'package:shop_cart/screens/account.dart';
 
-import 'package:shop_cart/screens/camera/scan.dart';
 import 'package:shop_cart/screens/dev.dart';
 import 'package:shop_cart/screens/find.dart';
 
 import 'package:shop_cart/screens/grocery.dart';
 import 'package:shop_cart/screens/meds.dart';
 import 'package:shop_cart/screens/orders.dart';
-import 'package:shop_cart/screens/test.dart';
+
 import 'package:shop_cart/utility/dashboard.dart';
+import 'package:toast/toast.dart';
+
+import 'chat.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -45,8 +48,8 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: IconButton(
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Scan()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => barmain()));
                 },
                 icon: Icon(Icons.camera_alt_sharp),
               )),
@@ -162,7 +165,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Padding(padding: EdgeInsets.all(8)),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Toast.show(
+                          "Prototype Build, Only first two options are working : )",
+                          context);
+                    },
                     child: SizedBox(
                       width: 55,
                       child: Column(
@@ -196,7 +203,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Padding(padding: EdgeInsets.all(8)),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Toast.show(
+                          "Prototype Build, Only first two options are working : )",
+                          context);
+                    },
                     child: SizedBox(
                       width: 55,
                       child: Column(
@@ -230,7 +241,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Padding(padding: EdgeInsets.all(8)),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Toast.show(
+                          "Prototype Build, Only first two options are working : )",
+                          context);
+                    },
                     child: SizedBox(
                       width: 55,
                       child: Column(
@@ -294,14 +309,14 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  IconButton(
-                    alignment: Alignment.topCenter,
-                    icon: Image.asset(
-                      "assets/logo/notification.png",
-                      width: 24,
-                    ),
-                    onPressed: () {},
-                  )
+                  // IconButton(
+                  //   alignment: Alignment.topCenter,
+                  //   icon: Image.asset(
+                  //     "assets/logo/notification.png",
+                  //     width: 24,
+                  //   ),
+                  //   onPressed: () {},
+                  // )
                 ],
               ),
             ),
@@ -373,7 +388,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 new Divider(),
                 new ListTile(
-                  title: new Text('Find Us'),
+                  title: new Text('Find Shops'),
                   trailing: new Icon(Icons.location_city),
                   onTap: () {
                     Navigator.push(context,
@@ -384,7 +399,10 @@ class _HomePageState extends State<HomePage> {
                 new ListTile(
                   title: new Text('Chat with Us'),
                   trailing: new Icon(Icons.message),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MyHomePage()));
+                  },
                 ),
               ]),
             )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shop_cart/screens/cart.dart';
 import 'package:shop_cart/screens/meds.dart';
 import 'package:shop_cart/search/search_meds.dart';
 import 'package:toast/toast.dart';
@@ -60,7 +61,10 @@ class _Meds2State extends State<Meds2> {
             FontAwesomeIcons.shoppingBasket,
             size: 20,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Cart()));
+          },
           color: Colors.grey,
           tooltip: 'Cart',
         )

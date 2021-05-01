@@ -28,7 +28,7 @@ class _FindState extends State<Find> {
           padding: EdgeInsets.only(left: 16, top: 25, right: 16),
           child: SizedBox(
             child: Text(
-              "Find Your Shop",
+              "Find Shops",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
           ),
@@ -63,7 +63,7 @@ class _FindState extends State<Find> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  _launchMeds()();
+                  _launchMeds();
                 },
                 child: Container(
                   color: Colors.green[300],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CategoriesTile extends StatelessWidget {
   final Color color;
@@ -32,7 +31,6 @@ class CategoriesTile extends StatelessWidget {
         SizedBox(height: 5),
         Text(
           this.title,
-          style: GoogleFonts.varelaRound(fontWeight: FontWeight.w500),
         )
       ],
     );

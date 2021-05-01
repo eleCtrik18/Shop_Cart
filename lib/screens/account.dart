@@ -28,7 +28,7 @@ class _SettingsPageState extends State<SettingsPage> {
         child: ListView(
           children: [
             Text(
-              "Settings",
+              "My Account",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
             SizedBox(
