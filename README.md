@@ -16,8 +16,8 @@ Note: All the code is present inside lib folder.
 
 1.Google Fonts  
 2.Awesome Fonts 
-
-4.http
+3.Flutter Launcher icons 
+4.http 
 5.Material Design 
 6.Toast 
 7.Path Provider.
