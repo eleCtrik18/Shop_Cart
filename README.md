@@ -15,18 +15,18 @@ Note: All the code is present inside lib folder.
 # Dependencies of Project
 
 1.Google Fonts  
-2.Awesome Fonts 
-3.Flutter Launcher icons 
+2.Awesome Fonts  
+3.Flutter Launcher icons  
 4.http 
-5.Material Design 
+5.Material Design  
 6.Toast 
-7.Path Provider.
-8.Dio.
-9.Flutter Spinkit 
-10.URL launcher
-11.qr Scan 
-12.Bubble
-13.intl
+7.Path Provider 
+8.Dio. 
+9.Flutter Spinkit  
+10.URL launcher 
+11.qr Scan  
+12.Bubble 
+13.intl 
 
 
 
